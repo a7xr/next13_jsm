@@ -1,3 +1,5 @@
+"use client"
+
 import Image from 'next/image'
 
 // localhost:3000
