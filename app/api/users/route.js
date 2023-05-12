@@ -1,6 +1,10 @@
 export async function GET(request) {
-  return new Response(<p>This is GET from route.js</p>);
+  const users = [
+    { id: 1, name: "name01" },
+    { id: 2, name: "name02" },
+  ];
+  return new Response(JSON.stringify(users));
 }
 
-// You can change that GET into 
+// You can change that GET into
 // - POST, PUT, DELETE, HEAD, PATCH
