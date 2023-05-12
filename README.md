@@ -47,3 +47,4 @@ Next JS features
 - - const About = lazy(() => import('./About'))
 -
 - NextJS is build on top of React
+.
