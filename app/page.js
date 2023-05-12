@@ -1,8 +1,15 @@
-"use client" //
+"use client"; //
 
 import Image from "next/image";
 
 // localhost:3000
+
+// Data Fetching
+//
+// 1. SSR
+// - - each request on the server is going to trigger a rendering cycle
+// 2. Static Site Generation (SSG)
+// 3. Incremental Static Generation (ISR)
 
 export default function Home() {
   return (
