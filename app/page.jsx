@@ -1,3 +1,4 @@
+import Feed from '@components/Feed';
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
         <p className="desc text-center">
             Long text here
         </p>
+        <Feed></Feed>
     </section>
   )
 }
