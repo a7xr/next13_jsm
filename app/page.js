@@ -8,8 +8,13 @@ import Image from "next/image";
 //
 // 1. SSR
 // - - each request on the server is going to trigger a rendering cycle
+// - - Each call is going to make a request on the server
 // 2. Static Site Generation (SSG)
+// - - This is the default data_fetching of NextJS
+// - - Going to cache the result
 // 3. Incremental Static Generation (ISR)
+// - - This combine the SSR and SSG
+// - - During some amount of time your datas are going to be cached
 
 export default function Home() {
   return (
