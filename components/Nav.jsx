@@ -8,6 +8,7 @@ import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 const Nav = () => {
   const isUserLoggedIn = true;
   const [providers, setProviders] = useState(null);
+  const [toggleDropDown, settoggleDropDown] = useState(false)
   useEffect(() => {
     const setProviders = async () => {
       const response = await getProviders();
@@ -74,7 +75,18 @@ const Nav = () => {
                 height={37}
                 className="rounded-full"
                 alt="profile"
+                onClick={() => settoggleDropDown((prev) => !prev)}
               />
+              {toggleDropDown && (
+                <div className="dropdown">
+                    <Link href="/profile"
+                      className="dropdown_link"
+                      onClick={()=>settoggleDropDown(false)}
+                    >
+                      My Profile
+                    </Link>
+                </div>
+              )}
             </div>
         ):(
             <>
