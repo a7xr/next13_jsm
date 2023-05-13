@@ -18,6 +18,7 @@ const Nav = () => {
         ></Image>
         <p className="logo_text">Promptopia</p>
 
+        {/* Desktop Navigation */}
         <div className="sm:flex hidden">
           {isUserLoggedIn ? (
             // run here if isUserLoggedIn=true
