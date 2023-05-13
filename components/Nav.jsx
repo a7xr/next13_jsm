@@ -21,7 +21,9 @@ const Nav = () => {
         <div className="sm:flex hidden">
           {isUserLoggedIn ? (
             // run here if isUserLoggedIn=true
-            <div></div>
+            <div className='flex gap-3 md:gap-5'>
+
+            </div>
           ):(
             // run here if isUserLoggedIn=false
             <div></div>
