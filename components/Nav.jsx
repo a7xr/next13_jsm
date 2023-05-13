@@ -67,7 +67,15 @@ const Nav = () => {
       {/* Mobile Navigation */}
       <div className="sm:hidden flex relative">
         {isUserLoggedIn ? (
-            <div className="flex"></div>
+            <div className="flex">
+              <Image
+                src="/assets/images/logo.svg"
+                width={37}
+                height={37}
+                className="rounded-full"
+                alt="profile"
+              />
+            </div>
         ):(
             <div></div>
         )}
