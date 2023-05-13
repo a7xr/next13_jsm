@@ -16,6 +16,10 @@ const Nav = () => {
           className="object-contain"
         ></Image>
         <p className="logo_text">Promptopia</p>
+
+        <div className="sm:flex hidden">
+            
+        </div>
       </Link>
     </nav>
   )
