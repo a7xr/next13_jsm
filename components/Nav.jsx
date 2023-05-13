@@ -15,6 +15,7 @@ const Nav = () => {
           height={30}
           className="object-contain"
         ></Image>
+        <p className="logo_text">Promptopia</p>
       </Link>
     </nav>
   )
