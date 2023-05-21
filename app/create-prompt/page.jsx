@@ -7,9 +7,10 @@ import {useRouter} from 'next/navigation';
 import Form from '@components/Form';
 
 const CreatePrompt = () => {
+  const [submitting, setSubmitting] = useState(false);
   return (
     <Form
-        
+
     >
 
     </Form>
