@@ -8,6 +8,9 @@ import {usePathname, useRouter} from 'next/navigation';
 import React from "react";
 
 const PromptCard = ({post, handleTagClick, handleEdit, handleDelete}) => {
+    const {data: session} = useSession();
+    const pathName = usePathname()
+    const router = useRouter();
     const [copied, setCopied] = useState("")
     const handleCopy = () => {
         setCopied(post.prompt);
@@ -58,6 +61,22 @@ const PromptCard = ({post, handleTagClick, handleEdit, handleDelete}) => {
       </p>
       <p className='font-inter text-sm blue_gradient cursor-pointer'
       onClick={() => handleTagClick && handleTagClick(post.tag)}>{post.tag}</p>
+
+      {session?.user.id === post.creator._id && pathName === '/profile' && (
+        <div className="x">
+            <p className="font-inter text-sm green_gradient cursor-pointer"
+                onClick={handleEdit}
+            >
+                Edit
+            </p>
+            <p className="font-inter text-sm orange_gradient cursor-pointer"
+                onClick={handleDelete}
+            >
+                Delete
+            </p>
+             
+        </div>
+      )}
     </div>
   )
 };
