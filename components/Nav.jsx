@@ -8,7 +8,7 @@ import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 const Nav = () => {
   const { data: session } = useSession();
   const [providers, setProviders] = useState(null);
-  const [toggleDropDown, settoggleDropDown] = useState(false)
+  const [toggleDropDown, settoggleDropDown] = useState(false);
   useEffect(() => {
     const setUpProviders = async () => {
       const response = await getProviders();
@@ -68,44 +68,46 @@ const Nav = () => {
       {/* Mobile Navigation */}
       <div className="sm:hidden flex relative">
         {session?.user ? (
-            <div className="flex">
-              <Image
-                src={session?.user.image}
-                width={37}
-                height={37}
-                className="rounded-full"
-                alt="profile"
-                onClick={() => settoggleDropDown((prev) => !prev)}
-              />
-              {toggleDropDown && (
-                <div className="dropdown">
-                    <Link href="/profile"
-                      className="dropdown_link"
-                      onClick={()=>settoggleDropDown(false)}
-                    >
-                      My Profile
-                    </Link>
-                    <Link href="/create-prompt"
-                      className="dropdown_link"
-                      onClick={()=>settoggleDropDown(false)}
-                    >
-                      Create Prompt
-                    </Link>
-                    <button
-                      type="button"
-                      onClick={() => {
-                        settoggleDropDown(false);
-                        signOut();
-                      }}
-                      className="mt-5 w-full black_btn"
-                    >
-                        Sign Out
-                    </button>
-                </div>
-              )}
-            </div>
-        ):(
-            <>
+          <div className="flex">
+            <Image
+              src={session?.user.image}
+              width={37}
+              height={37}
+              className="rounded-full"
+              alt="profile"
+              onClick={() => settoggleDropDown((prev) => !prev)}
+            />
+            {toggleDropDown && (
+              <div className="dropdown">
+                <Link
+                  href="/profile"
+                  className="dropdown_link"
+                  onClick={() => settoggleDropDown(false)}
+                >
+                  My Profile
+                </Link>
+                <Link
+                  href="/create-prompt"
+                  className="dropdown_link"
+                  onClick={() => settoggleDropDown(false)}
+                >
+                  Create Prompt
+                </Link>
+                <button
+                  type="button"
+                  onClick={() => {
+                    settoggleDropDown(false);
+                    signOut();
+                  }}
+                  className="mt-5 w-full black_btn"
+                >
+                  Sign Out
+                </button>
+              </div>
+            )}
+          </div>
+        ) : (
+          <>
             {providers &&
               Object.values(providers).map((provider) => (
                 <button
